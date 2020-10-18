@@ -1,8 +1,0 @@
-/shelf/
-/workspace.xml
-/dataSources/
-/dataSources.local.xml
-/httpRequests/
-.idea/*
-*.iml
-target/*

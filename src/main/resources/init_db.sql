@@ -1,0 +1,1 @@
+CREATE SCHEMA `spring_introduce` DEFAULT CHARACTER SET utf8 ;

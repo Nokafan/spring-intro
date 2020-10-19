@@ -1049,3 +1049,76 @@
 2020-10-18 18:30:43 INFO  Main:1510 - User(id=3, name=Bob2, email=2@i.ua)
 2020-10-18 18:30:43 INFO  Main:1510 - User(id=4, name=Bob3, email=3@i.ua)
 2020-10-18 18:30:43 INFO  Main:1510 - User(id=5, name=Bob4, email=4@i.ua)
+2020-10-18 21:57:18 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-18 21:57:18 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-18 21:57:19 INFO  Dialect:170 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-10-18 21:57:19 DEBUG SQL:128 - 
+    
+    drop table if exists User
+2020-10-18 21:57:19 DEBUG SQL:128 - 
+    
+    create table User (
+       id bigint not null auto_increment,
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+2020-10-18 21:57:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-18 21:57:19 INFO  UserDaoImpl:21 - Calling method add for User(id=null, name=testUser1, email=tes@i.ua)
+2020-10-18 21:57:20 DEBUG SQL:128 - 
+    insert 
+    into
+        User
+        (email, name) 
+    values
+        (?, ?)
+2020-10-18 21:57:20 INFO  UserDaoImpl:28 - Insert successful for User(id=1, name=testUser1, email=tes@i.ua)
+2020-10-18 21:57:20 INFO  UserDaoImpl:21 - Calling method add for User(id=null, name=Bob1, email=1@i.ua)
+2020-10-18 21:57:20 DEBUG SQL:128 - 
+    insert 
+    into
+        User
+        (email, name) 
+    values
+        (?, ?)
+2020-10-18 21:57:20 INFO  UserDaoImpl:28 - Insert successful for User(id=2, name=Bob1, email=1@i.ua)
+2020-10-18 21:57:20 INFO  UserDaoImpl:21 - Calling method add for User(id=null, name=Bob2, email=2@i.ua)
+2020-10-18 21:57:20 DEBUG SQL:128 - 
+    insert 
+    into
+        User
+        (email, name) 
+    values
+        (?, ?)
+2020-10-18 21:57:20 INFO  UserDaoImpl:28 - Insert successful for User(id=3, name=Bob2, email=2@i.ua)
+2020-10-18 21:57:20 INFO  UserDaoImpl:21 - Calling method add for User(id=null, name=Bob3, email=3@i.ua)
+2020-10-18 21:57:20 DEBUG SQL:128 - 
+    insert 
+    into
+        User
+        (email, name) 
+    values
+        (?, ?)
+2020-10-18 21:57:20 INFO  UserDaoImpl:28 - Insert successful for User(id=4, name=Bob3, email=3@i.ua)
+2020-10-18 21:57:20 INFO  UserDaoImpl:21 - Calling method add for User(id=null, name=Bob4, email=4@i.ua)
+2020-10-18 21:57:20 DEBUG SQL:128 - 
+    insert 
+    into
+        User
+        (email, name) 
+    values
+        (?, ?)
+2020-10-18 21:57:20 INFO  UserDaoImpl:28 - Insert successful for User(id=5, name=Bob4, email=4@i.ua)
+2020-10-18 21:57:20 INFO  UserDaoImpl:44 - Calling method listUsers()
+2020-10-18 21:57:20 DEBUG SQL:128 - 
+    select
+        user0_.id as id1_0_,
+        user0_.email as email2_0_,
+        user0_.name as name3_0_ 
+    from
+        User user0_
+2020-10-18 21:57:20 INFO  Main:1510 - User(id=1, name=testUser1, email=tes@i.ua)
+2020-10-18 21:57:20 INFO  Main:1510 - User(id=2, name=Bob1, email=1@i.ua)
+2020-10-18 21:57:20 INFO  Main:1510 - User(id=3, name=Bob2, email=2@i.ua)
+2020-10-18 21:57:20 INFO  Main:1510 - User(id=4, name=Bob3, email=3@i.ua)
+2020-10-18 21:57:20 INFO  Main:1510 - User(id=5, name=Bob4, email=4@i.ua)

@@ -13,8 +13,12 @@ import spring.intro.model.User;
 @Log4j
 @Repository
 public class UserDaoImpl implements UserDao {
+    private final SessionFactory sessionFactory;
+
     @Autowired
-    private SessionFactory sessionFactory;
+    public UserDaoImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public User add(User user) {

@@ -35,7 +35,7 @@ public class UserDaoImpl implements UserDao {
             if (transaction != null) {
                 transaction.rollback();
                 }
-            throw new RuntimeException ("Transaction rollbacked for user " + user, e);
+            throw new RuntimeException("Transaction rollbacked for user " + user, e);
         } finally {
             if (session != null) {
                 session.close();

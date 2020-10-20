@@ -2,7 +2,6 @@ package spring.intro.dao.impl;
 
 import java.util.List;
 import lombok.extern.log4j.Log4j;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -34,14 +33,14 @@ public class UserDaoImpl implements UserDao {
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
-                }
+            }
             throw new RuntimeException("Transaction rollbacked for user " + user, e);
         } finally {
             if (session != null) {
                 session.close();
             }
         }
-            return user;
+        return user;
     }
 
     @Override

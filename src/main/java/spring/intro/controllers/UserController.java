@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 import spring.intro.dto.UserResponseDto;
@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @GetMapping("/user/{id}")
-    public UserResponseDto get(@RequestParam(name = "id") Long id) {
+    public UserResponseDto get(@PathVariable Long id) {
         User user = userService.getById(id);
         return mapDto(user);
     }

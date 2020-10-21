@@ -13,7 +13,7 @@ import spring.intro.model.User;
 @Log4j
 @Repository
 public class UserDaoImpl implements UserDao {
-    private final SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     @Autowired
     public UserDaoImpl(SessionFactory sessionFactory) {
@@ -41,6 +41,14 @@ public class UserDaoImpl implements UserDao {
             }
         }
         return user;
+    }
+
+    @Override
+    public User getById(Long id) {
+        log.info("Calling method user by id = " + id);
+        try (Session session = sessionFactory.openSession()) {
+            return session.get(User.class, id);
+        }
     }
 
     @Override

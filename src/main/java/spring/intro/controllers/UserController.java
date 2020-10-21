@@ -32,18 +32,18 @@ public class UserController {
     @GetMapping("/user/{id}")
     public UserResponseDto get(@RequestParam(name = "id") Long id) {
         User user = userService.getById(id);
-        return mapDTO(user);
+        return mapDto(user);
     }
 
     @GetMapping("/user/all")
     public List<UserResponseDto> getAll() {
         return userService.listUsers()
                 .stream()
-                .map(this::mapDTO)
+                .map(this::mapDto)
                 .collect(Collectors.toList());
     }
 
-    private UserResponseDto mapDTO(User user) {
+    private UserResponseDto mapDto(User user) {
         UserResponseDto userResponseDto = new UserResponseDto();
         userResponseDto.setId(user.getId());
         userResponseDto.setName(user.getName());

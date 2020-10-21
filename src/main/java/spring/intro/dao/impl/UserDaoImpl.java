@@ -47,9 +47,7 @@ public class UserDaoImpl implements UserDao {
     public User getById(Long id) {
         log.info("Calling method user by id = " + id);
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("FROM User u WHERE u.id = :id", User.class)
-                    .setParameter("id", id)
-                    .getSingleResult();
+            return session.get(User.class, id);
         }
     }
 

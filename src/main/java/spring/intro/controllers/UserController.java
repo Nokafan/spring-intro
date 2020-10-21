@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 import spring.intro.dto.UserResponseDto;
@@ -12,6 +13,7 @@ import spring.intro.model.User;
 import spring.intro.service.UserService;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
     private UserService userService;
 
@@ -29,13 +31,13 @@ public class UserController {
         return new RedirectView("/user/all");
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public UserResponseDto get(@PathVariable Long id) {
         User user = userService.getById(id);
         return mapDto(user);
     }
 
-    @GetMapping("/user/all")
+    @GetMapping
     public List<UserResponseDto> getAll() {
         return userService.listUsers()
                 .stream()

@@ -13,7 +13,7 @@ import spring.intro.service.UserService;
 
 @RestController
 public class UserController {
-    private final UserService userService;
+    private UserService userService;
 
     @Autowired
     public UserController(UserService userService) {
